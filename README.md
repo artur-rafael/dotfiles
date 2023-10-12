@@ -17,10 +17,10 @@ Example for updating .vimrc file.
 
     > git clone --bare ssh://git@stash-server.elecnor-deimos.com:7999/~arrr/dotfiles.git $HOME/.myconfigs
 
-**Check reference links if there are issues.** 
+**Check reference links if there are issues.**   
 Might create a script to perform the installation automatically just like Atlassian suggests.
 
 ## References
-[Atlassian tutorials](https://www.atlassian.com/git/tutorials/dotfiles)
+[Atlassian tutorials](https://www.atlassian.com/git/tutorials/dotfiles)  
 [YT video tutorial](https://www.youtube.com/watch?v=tBoLDpTWVOM)
 
