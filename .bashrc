@@ -112,4 +112,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# --- My Configs ---
+
 alias config='/usr/bin/git --git-dir=$HOME/.myconfigs/ --work-tree=$HOME'
