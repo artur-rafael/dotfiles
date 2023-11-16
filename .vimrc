@@ -131,7 +131,7 @@ set nofoldenable
 " Using a plugin to display the tabnumber and disable the X.
 
 " Overwrites the colorscheme of the tab toolbar.
-highlight TabLine term=underline cterm=NONE ctermfg=0 ctermbg=235 guifg=#808080 guibg=#1B1D1E
+highlight TabLine term=underline cterm=NONE ctermfg=255 ctermbg=235 guifg=#808080 guibg=#1B1D1E
 highlight TabLineFill term=reverse cterm=NONE gui=reverse ctermbg=235 guifg=#1B1D1E guibg=#1B1D1E
 highlight TabLineSel term=bold cterm=bold gui=bold ctermbg=237
 
