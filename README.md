@@ -2,10 +2,6 @@
 
 This repository was established for the purpose of storing configurations, facilitating the seamless transfer of configurations and workflows across different machines.
 
-# Add new plugins
-
-> config submodule add --depth=1 <repo-link> ~/.vim/pack/my-plugins/start/<repo-name>
-
 # Update Dotfiles
 
 Consider normal git commands but instead of using the keyword "git" at the beginning of a command use "config". This alias should be in .bashrc file.
@@ -23,6 +19,8 @@ Example for updating .vimrc file.
 
 **Check reference links if there are issues.**   
 Might create a script to perform the installation automatically just like Atlassian suggests.
+
+___
 
 # Git Submodules
 
@@ -46,6 +44,7 @@ This allows to add a new plugin with a consistent name (e.g. "vim-plugin-name").
 	> config submodule foreach --recursive git pull origin master
 
 This allows to update all the repository modules. The recursive flag is there in case there are submodules within submodules.
+___
 
 # References
 [Atlassian tutorials](https://www.atlassian.com/git/tutorials/dotfiles)  
