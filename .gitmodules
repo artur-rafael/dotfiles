@@ -10,3 +10,6 @@
 [submodule "/home/arrr/.vim/pack/my-plugins/start/vim-tabline"]
 	path = .vim/pack/my-plugins/start/vim-tabline
 	url = https://github.com/mkitt/tabline.vim
+[submodule ".vim/pack/my-plugins/start/vim-cpp-modern"]
+	path = .vim/pack/my-plugins/start/vim-cpp-modern
+	url = https://github.com/bfrg/vim-cpp-modern
