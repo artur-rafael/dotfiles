@@ -2,6 +2,10 @@
 
 This repository was established for the purpose of storing configurations, facilitating the seamless transfer of configurations and workflows across different machines.
 
+## Add new plugins
+
+> config submodule add --depth=1 <repo-link> ~/.vim/pack/my-plugins/start/<repo-name>
+
 ## Update Dotfiles
 
 Consider normal git commands but instead of using the keyword "git" at the beginning of a command use "config". This alias should be in .bashrc file.
