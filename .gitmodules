@@ -13,3 +13,6 @@
 [submodule ".vim/pack/my-plugins/start/vim-cpp-modern"]
 	path = .vim/pack/my-plugins/start/vim-cpp-modern
 	url = https://github.com/bfrg/vim-cpp-modern
+[submodule ".vim/pack/my-plugins/start/vim-better-whitespace"]
+	path = .vim/pack/my-plugins/start/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace
