@@ -4,9 +4,6 @@
 [submodule ".vim/pack/my-plugins/start/vim-airline"]
 	path = .vim/pack/my-plugins/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline
-[submodule "/home/arrr/.vim/pack/plugins/start/vim-supertab"]
-	path = /home/arrr/.vim/pack/plugins/start/vim-supertab
-	url = https://github.com/ervandew/supertab
-[submodule "/home/arrr/.vim/pack/my-plugins/start/vim-supertab"]
-	path = /home/arrr/.vim/pack/my-plugins/start/vim-supertab
+[submodule ".vim/pack/my-plugins/start/vim-supertab"]
+	path = .vim/pack/my-plugins/start/vim-supertab
 	url = https://github.com/ervandew/supertab
