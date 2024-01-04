@@ -21,6 +21,8 @@ filetype on
 filetype plugin on
 " Load an indent file for the detected file type.
 filetype indent on
+" Allow mouse usage
+set mouse=a
 
 " -----------------------------
 " ----- Temporary Files -------
@@ -47,18 +49,18 @@ colorscheme molokai
 highlight Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 highlight LineNr term=underline ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 " Change visual mode highlight
-highlight Visual term=reverse ctermbg=0 guibg=#000000
+highlight Visual term=reverse ctermfg=0 ctermbg=3 guibg=#000000
 
 " Use better colors.
 "set termguicolors
 
 " Set a maximum column, guide to not exceed that column.
-set colorcolumn=100
+set colorcolumn=80
 " Set the column color.
 highlight ColorColumn term=reverse ctermbg=0 guibg=#000000
 
 " Override the vim TODO, FIXME and XXX highlighting.
-highlight Todo term=standout cterm=bold ctermfg=160 ctermbg=NONE gui=bold guifg=#ff0000 guibg=NONE
+" highlight Todo term=standout cterm=bold ctermfg=160 ctermbg=NONE gui=bold guifg=#ff0000 guibg=NONE
 
 " -----------------------------
 " ------ Mouse Highlight ------
@@ -104,7 +106,7 @@ set showmode
 set showmatch
 
 " Use highlighting when doing a search.
-"set hlsearch
+set hlsearch
 " Use incremental search instead of having to type all word.
 set incsearch
 " Ignore capital letters during search.
@@ -112,6 +114,9 @@ set ignorecase
 " Override the ignorecase option if searching for capital letters.
 " This will allow you to search specifically for capital letters.
 set smartcase
+" Overwrites the search highlight
+highlight IncSearch term=reverse ctermfg=0 ctermbg=3 gui=reverse guifg=#C4BE89 guibg=#000000
+highlight Search    term=reverse ctermfg=0 ctermbg=3 gui=reverse guifg=#000000 guibg=#FFE792
 
 " Set the commands to save in history default number is 20.
 set history=1000
@@ -146,15 +151,6 @@ set wildmode=list:longest
 " There are certain files that we would never want to edit with Vim.
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
-
-" ----------------------------
-" ----- NERDTree Plugin ------
-" ----------------------------
-
-" Start NERDTree and put the cursor back in the other window.
-"autocmd VimEnter * NERDTree | wincmd p
-" Exit Vim if NERDTree is the only window remaining in the only tab.
-"autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | quit | endif
 
 " ----------------------------
 " ------ Airline Plugin ------
@@ -195,6 +191,11 @@ noremap <Right> <Nop>
 " Move page up/down but keep it in center.
 noremap <C-d> <C-d>zz
 noremap <C-u> <C-u>zz
+
 " Search next/previous but keep it in center.
 noremap n nzzzv
 noremap N Nzzzv
+
+" Jump between functions but keep it in center.
+noremap [[ [[zz
+noremap ]] ]]zz
