@@ -4,7 +4,7 @@ Welcome to my dotfiles repository! This collection of dotfiles serves as a centr
 
 ___
 
-# Configured Tools 
+# Configuration Files for Integrated Tools
 
 - **bash** is a command-line interpreter for Unix-like operating systems, providing a text-based interface to interact with the system, run programs, and automate tasks using scripts.
 - **git** is a distributed version control system (DVCS) used for tracking changes in source code during software development. Git is known for its speed, flexibility, and distributed nature, allowing multiple developers to collaborate on projects seamlessly.
@@ -13,13 +13,13 @@ ___
 
 ___
 
-# Install on a New Machine 
+# Install on a New Machine
 
 ## Prior to Clone
 
 You should have git installed
 
-   > sudo apt install git
+    > sudo apt install git
 
 Make sure to have this alias in the **.bashrc** file as the following alias set. So that git doesn't interfere with other repositories.
 
@@ -43,11 +43,11 @@ Checkout the actual content from the bare repository to $HOME. If there are erro
 
 Set the flag showUntrackedFiles to no on this specific (local) repository:
 
-   > config config --local status.showUntrackedFiles no
+    > config config --local status.showUntrackedFiles no
 
 Populate the config file with the submodules and update them:
 
-   > config submodule update --init --recursive
+    > config submodule update --init --recursive
 
 ___
 
@@ -56,7 +56,7 @@ ___
 Consider normal git commands but instead of using the keyword "git" at the beginning of a command use "config". This alias should be in .bashrc file.
 
 Example for updating .vimrc file.
-    
+
     > config status
     > config add .vimrc
     > config commit -am "update vimrc config"
@@ -76,14 +76,14 @@ Unfortunately the **.gitmodules** file can't be placed inside the bare repositor
 
 ## How to add vim plugins
 
-	> cd ~/.vim/pack/my-plugins/start
-	> config submodule add --depth=1 <repo-link> vim-<plugin-name>
+    > cd ~/.vim/pack/my-plugins/start
+    > config submodule add --depth=1 <repo-link> vim-<plugin-name>
 
 This allows to add a new plugin with a consistent name (e.g. "vim-plugin-name"). The depth flag specifies the number of commits to include in the initial clone. It allows you to create a shallow clone, which contains only a limited history of the repository.
 
 ## How to update plugins
 
-	> config submodule foreach --recursive git pull origin master
+    > config submodule foreach --recursive git pull origin master
 
 This allows to update all the repository modules. The recursive flag is there in case there are submodules within submodules.
 
@@ -135,6 +135,5 @@ Remove the entry in .gitmodules and remove the submodule directory
 ___
 
 # References
-[Atlassian tutorials](https://www.atlassian.com/git/tutorials/dotfiles)  
+[Atlassian tutorials](https://www.atlassian.com/git/tutorials/dotfiles)
 [YT video tutorial](https://www.youtube.com/watch?v=tBoLDpTWVOM)
-
