@@ -4,38 +4,50 @@ Welcome to my dotfiles repository! This collection of dotfiles serves as a centr
 
 ___
 
-# Tools
+# Configured Tools 
 
-- **vim**, a highly configurable and efficient text editor for command-line. Vim is known for its powerful features, speed, and extensibility.
-- **tmux** is a command-line tool that enables users to create and manage multiple terminal sessions within a single terminal window. It provides a way to organize, split, and switch between different terminal panes and windows, allowing users to work on multiple tasks simultaneously without needing to open multiple terminal windows.
+- **bash** is a command-line interpreter for Unix-like operating systems, providing a text-based interface to interact with the system, run programs, and automate tasks using scripts.
 - **git** is a distributed version control system (DVCS) used for tracking changes in source code during software development. Git is known for its speed, flexibility, and distributed nature, allowing multiple developers to collaborate on projects seamlessly.
+- **tmux** is a command-line tool that enables users to create and manage multiple terminal sessions within a single terminal window. It provides a way to organize, split, and switch between different terminal panes and windows, allowing users to work on multiple tasks simultaneously without needing to open multiple terminal windows.
+- **vim**, a highly configurable and efficient text editor for command-line. Vim is known for its powerful features, speed, and extensibility.
 
 ___
 
-# Getting Started
+# Install on a New Machine 
 
-Prior to the installation: Make sure that in the **.bashrc** file as the following alias set. So that git doesn't interfere with other repositories.
+## Prior to Clone
 
-    > alias config='/usr/bin/git --git-dir=$HOME/.myconfigs/ --work-tree=$HOME'
+You should have git installed
+
+   > sudo apt install git
+
+Make sure to have this alias in the **.bashrc** file as the following alias set. So that git doesn't interfere with other repositories.
+
+    > echo "alias config='/usr/bin/git --git-dir=$HOME/.myconfigs/ --work-tree=$HOME'" >> ~/.bashrc
 
 And that your source repository ignores the folder where you'll clone it, so that you don't create weird recursion problems
 
-    > echo ".myconfigs" >> .gitignore
+    > echo ".myconfigs" >> ~/.gitignore
+
+## Clone
 
 To use these dotfiles configuration on a new machine:
 
-    > git clone --bare --recursive ssh://git@stash-server.elecnor-deimos.com:7999/~arrr/dotfiles.git $HOME/.myconfigs
+    > git clone --bare --recursive git@github.com:artur-rafael/dotfiles.git ~/.myconfigs
 
-This will create a Git bare repository in the .myconfigs folder in the /home/ directory. The recursive flag will also clone any dependencies (check submodules tab for more info).
-A Git bare repository is a special type of repository that does not have a working directory. Unlike a typical Git repository that contains your project files and a hidden .git directory, a bare repository only contains the version control information.
+## After Cloning
 
-Define the alias in the current shell scope, or re-open shell:
-
-    > alias config='/usr/bin/git --git-dir=$HOME/.myconfigs/ --work-tree=$HOME'
-
-Checkout the actual content from the bae repository to $HOME. If there are errors, remove or backup the files causing the issues.
+Checkout the actual content from the bare repository to $HOME. If there are errors, remove or backup the files causing the issues.
 
     > config checkout
+
+Set the flag showUntrackedFiles to no on this specific (local) repository:
+
+   > config config --local status.showUntrackedFiles no
+
+Populate the config file with the submodules and update them:
+
+   > config submodule update --init --recursive
 
 ___
 
@@ -75,7 +87,7 @@ This allows to add a new plugin with a consistent name (e.g. "vim-plugin-name").
 
 This allows to update all the repository modules. The recursive flag is there in case there are submodules within submodules.
 
-## Clone repository with submodules
+## Clone Repository with Submodules
 
 **Method A)** By adding the --recursive flag to git clone command, the repository and all the submodules within the repository are cloned.
 
@@ -86,7 +98,7 @@ This allows to update all the repository modules. The recursive flag is there in
     > git clone <repo-link>
     > git submodule update --init --recursive
 
-## Go to a specific commit or tag within the submodule history
+## Go to a Specific Commit or Tag within the Submodule History
 
 Move to the submodule directory, git will understand its a submodule and all the git commands will be applied to the submodule repository.
 
@@ -106,7 +118,7 @@ Then, another developer who wants to have the submodule in the same tag/commit, 
     > git pull
     > git submodule update --init --recursive
 
-## Remove a submodule from the repository
+## Remove a Submodule from the Repository
 
 Remove the submodule entry from .git/config
 
