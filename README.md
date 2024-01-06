@@ -49,6 +49,18 @@ Populate the config file with the submodules and update them:
 
     > config submodule update --init --recursive
 
+## Configure Git (Optional)
+
+The current .gitconfig includes a .gitconfig-user file that should contain machine specific configurations. One of the configuration can the about the user name and email. To configure this do the following:
+
+    > touch .gitconfig-user
+
+Populate the file with your information:
+
+> [user]
+>    name = Artur Rafael
+>    email = artur_m_rafael@hotmail.com
+
 ___
 
 # Update Dotfiles
