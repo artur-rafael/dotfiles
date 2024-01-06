@@ -57,9 +57,11 @@ The current .gitconfig includes a .gitconfig-user file that should contain machi
 
 Populate the file with your information:
 
-> [user]
->    name = Artur Rafael
->    email = artur_m_rafael@hotmail.com
+```
+[user]
+    name = Artur Rafael
+    email = artur_m_rafael@hotmail.com
+```
 
 ___
 
