@@ -110,6 +110,8 @@ alias la='ls -A'
 alias lla='ls -l -A'
 alias l='ls -CF'
 
+alias python='python3'
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
