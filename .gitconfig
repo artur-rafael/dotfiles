@@ -12,3 +12,8 @@
    st = status -sb
    d = diff
    dv = difftool -t vimdiff -y
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
