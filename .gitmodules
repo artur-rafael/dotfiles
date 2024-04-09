@@ -13,3 +13,6 @@
 [submodule ".vim/pack/my-plugins/start/vim-better-whitespace"]
 	path = .vim/pack/my-plugins/start/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace
+[submodule ".vim/pack/my-plugins/start/vim-gitgutter"]
+	path = .vim/pack/my-plugins/start/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter

@@ -48,7 +48,7 @@ syntax on
 " Use better colors.
 set termguicolors
 
-"Sets the colorscheme.
+" Sets the colorscheme.
 colorscheme molokai
 " Let the terminal define the background.
 highlight Normal ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
@@ -64,8 +64,8 @@ highlight LineNr ctermfg=NONE ctermbg=NONE guifg=NONE guibg=NONE
 " Highlight cursor line underneath the cursor horizontally and vertically.
 set cursorline cursorcolumn
 " Set colorscheme for the cursor highlights.
-highlight CursorLine   term=underline ctermbg=234 guibg=#111111
-highlight CursorColumn term=underline ctermbg=234 guibg=#111111
+highlight CursorLine   term=underline ctermbg=234 guibg=#202020
+highlight CursorColumn term=underline ctermbg=234 guibg=#202020
 
 " ----------------------------
 " ---- Editing Experience ----
@@ -136,17 +136,33 @@ let g:airline_theme='minimalist'
 " ---- WhiteSpaces Plugin ----
 " ----------------------------
 
-" Sets the unrequired backspaces to a darkred color
+" Sets the unrequired backspaces to a darkred color.
 let g:better_whitespace_ctermcolor='052'
 
 " ----------------------------
 " ---- CPP-Modern Plugin -----
 " ----------------------------
 
-" Enable highlighting of C++11 attributes
+" Enable highlighting of C++11 attributes.
 let g:cpp_attributes_highlight = 1
-" Highlight struct/class member variables (affects both C and C++ files)
+" Highlight struct/class member variables (affects both C and C++ files).
 let g:cpp_member_highlight = 1
+
+" ----------------------------
+" ----- GitGutter Plugin -----
+" ----------------------------
+
+" The diff markers should appear after this delay (default value is 4000, 4s).
+set updatetime=100
+
+" Customization tweaks.
+highlight SignColumn      guibg=NONE    ctermbg=NONE
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+
+" Toggle on/off plugin.
+nnoremap <C-g> :GitGutterToggle<CR>
 
 " ----------------------------
 " ----- Keybinding Maps ------
@@ -176,7 +192,7 @@ noremap ]] ]]zz
 " Toggle on/off vim numbering.
 nnoremap <C-n> :set nu! rnu!<CR>
 
-" Open netrw keybind (e=Explorer)
+" Open netrw keybind (e=Explorer).
 nnoremap <leader>e :Ex<CR>
 
 " Lists all buffers.
@@ -207,4 +223,3 @@ nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
-
