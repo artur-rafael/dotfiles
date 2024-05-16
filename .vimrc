@@ -155,6 +155,12 @@ let g:cpp_member_highlight = 1
 " The diff markers should appear after this delay (default value is 4000, 4s).
 set updatetime=100
 
+" Turn off plugin on startup.
+"let g:gitgutter_enabled = 0
+
+" Disable plugin keybinds, to not interfere with the ones set.
+let g:gitgutter_map_keys = 0
+
 " Customization tweaks.
 highlight SignColumn      guibg=NONE    ctermbg=NONE
 highlight GitGutterAdd    guifg=#009900 ctermfg=2
@@ -163,6 +169,14 @@ highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 
 " Toggle on/off plugin.
 nnoremap <C-g> :GitGutterToggle<CR>
+
+" Jump between hunks.
+nmap ]c <Plug>(GitGutterNextHunk)
+nmap [c <Plug>(GitGutterPrevHunk)
+
+" Undo/Preview hunks.
+nmap ghu <Plug>(GitGutterUndoHunk)
+nmap ghp <Plug>(GitGutterPreviewHunk)
 
 " ----------------------------
 " ----- Keybinding Maps ------
