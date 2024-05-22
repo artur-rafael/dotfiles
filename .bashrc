@@ -130,4 +130,4 @@ alias config='/usr/bin/git --git-dir=$HOME/.myconfigs/ --work-tree=$HOME'
 parse_git_branch() {
    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
-PS1='\[\e[33m\][\u@\H] \[\033[01;34m\]\w \[\e[31m\]$(parse_git_branch) \[\e[0m\]\n\$ '
+PS1='\[\e[33m\][\u@\h] \[\033[01;34m\]\w \[\e[31m\]$(parse_git_branch) \[\e[0m\]\n\$ '
