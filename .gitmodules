@@ -16,3 +16,6 @@
 [submodule ".vim/pack/my-plugins/start/vim-gitgutter"]
 	path = .vim/pack/my-plugins/start/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+[submodule ".vim/pack/my-plugins/start/vim-ctrlp"]
+	path = .vim/pack/my-plugins/start/vim-ctrlp
+	url = https://github.com/ctrlpvim/ctrlp.vim
