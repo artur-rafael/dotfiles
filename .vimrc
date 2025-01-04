@@ -126,6 +126,16 @@ set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 let g:netrw_banner = 0
 
 " ----------------------------
+" -------- FZF Plugin --------
+" ----------------------------
+
+" The fzf repository is a git submodule in the home directory
+set rtp+=~/.fzf
+
+" Jump to a filename.
+nnoremap <C-p> :Files<CR>
+
+" ----------------------------
 " ------ Airline Plugin ------
 " ----------------------------
 
@@ -218,7 +228,10 @@ nnoremap <Leader>d :bdelete<CR>
 " <Ctrl-o> <Ctrl-i> default bindings to jump back to previous buffer.
 
 " Jump to a buffer by filename.
-nnoremap <Leader>f :buffers<CR>:buffer<Space>
+" nnoremap <Leader>f :buffers<CR>:buffer<Space>
+"
+" Jump to a buffer by filename (handled by fzf)
+nnoremap <Leader>f :Buffers<CR>
 
 " Jump to a buffer by home row keys.
 nnoremap <Leader>h :bprevious<CR>
