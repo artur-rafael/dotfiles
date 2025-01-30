@@ -106,6 +106,9 @@ set nofoldenable foldmethod=syntax foldnestmax=10 foldlevel=10
 " smartcase:  Override the ignorecase option if searching for capital letters.
 set hlsearch incsearch ignorecase smartcase
 
+" Align case labels with the switch statement.
+autocmd FileType c setlocal cinoptions+=:0
+
 " ----------------------------
 " ----- Wildmenu Feature -----
 " ----------------------------
