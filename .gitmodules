@@ -19,6 +19,6 @@
 [submodule ".vim/pack/my-plugins/start/vim-fzf"]
 	path = .vim/pack/my-plugins/start/vim-fzf
 	url = https://github.com/junegunn/fzf.vim
-[submodule "/home/arrr/.fzf"]
-	path = /home/arrr/.fzf
+[submodule ".fzf"]
+	path = .fzf
 	url = https://github.com/junegunn/fzf.git
