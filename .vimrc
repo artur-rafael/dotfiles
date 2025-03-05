@@ -39,6 +39,17 @@ set directory=~/.vim/swp//
 " Specifies the undo(.un~) files directory.
 set undodir=~/.vim/undo//
 
+" Create necessary directories if they don't exist.
+if !isdirectory(expand('~/.vim/backup'))
+   call mkdir(expand('~/.vim/backup'), 'p')
+endif
+if !isdirectory(expand('~/.vim/swp'))
+   call mkdir(expand('~/.vim/swp'), 'p')
+endif
+if !isdirectory(expand('~/.vim/undo'))
+   call mkdir(expand('~/.vim/undo'), 'p')
+endif
+
 " -----------------------------
 " ------- Theme Related -------
 " -----------------------------
