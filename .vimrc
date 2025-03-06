@@ -99,11 +99,9 @@ set showmatch
 " relativenumber: Add relative numbering for to ease line hoping.
 "set number relativenumber
 
-" expandtab:   Use space characters instead of tabs.
-" tabstop:     Sets the width of a tab.
-" softtabstop: Sets the number of spaces to insert when you press the <Tab> key.
-" shiftwidth:  Sets the number of spaces used for each step of (auto)indent.
-set expandtab tabstop=3 softtabstop=3 shiftwidth=3
+" Vim identation guide:
+" https://gist.github.com/LunarLambda/4c444238fb364509b72cfb891979f1dd
+set expandtab shiftwidth=3 softtabstop=-1 smarttab
 
 " nofoldenable: Starts editor with all folds open.
 " foldmethod:   Defines the folding method syntax or indent.
