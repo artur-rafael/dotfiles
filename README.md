@@ -17,51 +17,41 @@ ___
 
 ## Prior to Clone
 
-You should have git installed
-
-    > sudo apt install git
-
 Make sure to have this alias in the **.bashrc** file as the following alias set. So that git doesn't interfere with other repositories.
 
-    > echo "alias config='/usr/bin/git --git-dir=$HOME/.myconfigs/ --work-tree=$HOME'" >> ~/.bashrc
+    echo "alias config='/usr/bin/git --git-dir=$HOME/.myconfigs/ --work-tree=$HOME'" >> ~/.bashrc
 
 And that your source repository ignores the folder where you'll clone it, so that you don't create weird recursion problems
 
-    > echo ".myconfigs" >> ~/.gitignore
+    echo ".myconfigs" >> ~/.gitignore
 
 ## Clone
 
 To use these dotfiles configuration on a new machine:
 
-    > git clone --bare --recursive git@github.com:artur-rafael/dotfiles.git ~/.myconfigs
+    git clone --bare --recursive git@github.com:artur-rafael/dotfiles.git ~/.myconfigs
 
 ## After Cloning
 
 Checkout the actual content from the bare repository to $HOME. If there are errors, remove or backup the files causing the issues.
 
-    > config checkout
+    config checkout
 
 Set the flag showUntrackedFiles to no on this specific (local) repository:
 
-    > config config --local status.showUntrackedFiles no
+    config config --local status.showUntrackedFiles no
 
 Populate the config file with the submodules and update them:
 
-    > config submodule update --init --recursive
+    config submodule update --init --recursive
 
 ## Configure Git (Optional)
 
 The current .gitconfig includes a .gitconfig-user file that should contain machine specific configurations. One of the configuration can the about the user name and email. To configure this do the following:
 
-    > touch .gitconfig-user
-
-Populate the file with your information:
-
-```
-[user]
-    name = Artur Rafael
-    email = artur_m_rafael@hotmail.com
-```
+    echo "[user]" >> ~/.gitconfig-user
+    echo "	name = Artur Rafael" >> ~/.gitconfig-user
+    echo "	email = 76266382+artur-rafael@users.noreply.github.com" >> ~/.gitconfig-user
 
 ___
 
@@ -90,14 +80,14 @@ Unfortunately the **.gitmodules** file can't be placed inside the bare repositor
 
 ## How to add vim plugins
 
-    > cd ~/.vim/pack/my-plugins/start
-    > config submodule add --depth=1 <repo-link> vim-<plugin-name>
+    cd ~/.vim/pack/my-plugins/start
+    config submodule add --depth=1 <repo-link> vim-<plugin-name>
 
 This allows to add a new plugin with a consistent name (e.g. "vim-plugin-name"). The depth flag specifies the number of commits to include in the initial clone. It allows you to create a shallow clone, which contains only a limited history of the repository.
 
 ## How to update plugins
 
-    > config submodule foreach --recursive git pull origin master
+    config submodule foreach --recursive git pull origin master
 
 This allows to update all the repository modules. The recursive flag is there in case there are submodules within submodules.
 
@@ -105,46 +95,46 @@ This allows to update all the repository modules. The recursive flag is there in
 
 **Method A)** By adding the --recursive flag to git clone command, the repository and all the submodules within the repository are cloned.
 
-    > git clone <repo-link> --recursive
+    git clone <repo-link> --recursive
 
 **Method B)** There is also the manual way to initialize the submodules after the clone.
 
-    > git clone <repo-link>
-    > git submodule update --init --recursive
+    git clone <repo-link>
+    git submodule update --init --recursive
 
 ## Go to a Specific Commit or Tag within the Submodule History
 
 Move to the submodule directory, git will understand its a submodule and all the git commands will be applied to the submodule repository.
 
-    > # Move to submodule directory.
-    > cd <submodule-path>
-    > git checkout <tag>/<commit>
-    > # Leave submodule directory for git to assume the repository directory.
-    > cd ..
-    > # Validate change (optional)
-    > git status
-    > # Commit the change the way you prefer.
-    > git commit -m "moved submodule to v1.0"
-    > git push
+    # Move to submodule directory.
+    cd <submodule-path>
+    git checkout <tag>/<commit>
+    # Leave submodule directory for git to assume the repository directory.
+    cd ..
+    # Validate change (optional)
+    git status
+    # Commit the change the way you prefer.
+    git commit -m "moved submodule to v1.0"
+    git push
 
 Then, another developer who wants to have the submodule in the same tag/commit, have to do this:
 
-    > git pull
-    > git submodule update --init --recursive
+    git pull
+    git submodule update --init --recursive
 
 ## Remove a Submodule from the Repository
 
 Remove the submodule entry from .git/config
 
-    > git submodule deinit -f <submodule-path>
+    git submodule deinit -f <submodule-path>
 
 Remove the submodule directory from the superproject's .git/modules directory
 
-    > rm -rf .git/modules/<submodule-path>
+    rm -rf .git/modules/<submodule-path>
 
 Remove the entry in .gitmodules and remove the submodule directory
 
-    > git rm -f <submodule-path>
+    git rm -f <submodule-path>
 
 ___
 
