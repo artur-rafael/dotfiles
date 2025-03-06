@@ -52,11 +52,12 @@ Consider normal git commands but instead of using the keyword "git" at the begin
 
 Example for updating .vimrc file.
 
-> config status
-> config add .vimrc
-> config commit -am "update vimrc config"
-> config push
-
+```
+config status
+config add .vimrc
+config commit -am "update vimrc config"
+config push
+```
 ___
 
 # Git Submodules
@@ -82,16 +83,24 @@ This allows to update all the repository modules. The recursive flag is there in
 
 Move to the submodule directory, git will understand its a submodule and all the git commands will be applied to the submodule repository.
 
-> cd <submodule-path>
-> git checkout <tag>/<commit>
+```
+cd <submodule-path>
+git checkout <tag>/<commit>
+```
 
 Leave submodule directory for git to assume the repository directory. Validate the change with status.
-> cd ..
-> git status
+
+```
+cd ..
+git status
+```
 
 Commit the change the way you prefer.
-> git commit -m "moved submodule to v1.0"
-> git push
+
+```
+git commit -m "moved submodule to v1.0"
+git push
+```
 
 Then, another developer who wants to have the submodule in the same tag/commit, have to do this:
 
