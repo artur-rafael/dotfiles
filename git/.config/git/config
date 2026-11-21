@@ -1,0 +1,10 @@
+[core]
+	editor = nvim
+[alias]
+	last = log -1 --stat
+	ll = ls --stat
+	ls = log --decorate --format='%C(auto)%h%d %s %C(blue)[%an]%Creset'
+	s = status
+[user]
+	name = artur
+	email = 76266382+artur-rafael@users.noreply.github.com
